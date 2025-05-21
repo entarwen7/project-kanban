@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Diseñar wireframes",
+      "description": "Crear los wireframes para el nuevo módulo",
+      "status": "completada",
+      "assignedTo": "Laura"
+    },
+    {
+      "id": "2",
+      "title": "Desarrollar API",
+      "description": "Implementar endpoints en FastAPI",
+      "status": "completada",
+      "assignedTo": "Carlos"
+    },
+    {
+      "id": "3",
+      "title": "Pruebas de QA",
+      "description": "Ejecutar pruebas automatizadas",
+      "status": "completada",
+      "assignedTo": "Ana"
+    },
+    {
+      "id": "62ed",
+      "title": "Front",
+      "description": "competar todo",
+      "status": "en_progreso",
+      "assignedTo": "pablo"
+    }
+  ]
+}
