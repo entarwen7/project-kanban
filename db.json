@@ -25,8 +25,15 @@
       "id": "62ed",
       "title": "Front",
       "description": "competar todo",
-      "status": "en_progreso",
-      "assignedTo": "pablo"
+      "status": "completada",
+      "assignedTo": "Pablo"
+    },
+    {
+      "id": "3f75",
+      "title": "Front alternativo",
+      "description": "Crear para la prueba ",
+      "status": "pendiente",
+      "assignedTo": "Camilo"
     }
   ]
 }
