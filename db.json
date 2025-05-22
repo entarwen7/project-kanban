@@ -32,8 +32,22 @@
       "id": "3f75",
       "title": "Front alternativo",
       "description": "Crear para la prueba ",
-      "status": "pendiente",
+      "status": "completada",
       "assignedTo": "Camilo"
+    },
+    {
+      "id": "d4f1",
+      "title": "DDd",
+      "description": "ewbjkewd",
+      "status": "completada",
+      "assignedTo": "ewjlqedn"
+    },
+    {
+      "id": "21ef",
+      "title": "gtftuvf",
+      "description": "njfercbujrfbuj",
+      "status": "completada",
+      "assignedTo": "Diego"
     }
   ]
 }

@@ -5,7 +5,7 @@ import { Task } from '../../../typesTasks';
 interface TaskContextType {
   tasks: Task[];
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
-  updateTaskStatus: (id: number, status: Task['status']) => void;
+  updateTaskStatus: (id: string, status: Task['status']) => void;
   addTask: (task: Omit<Task, 'id'>) => void;
 }
 
@@ -14,7 +14,7 @@ const TaskContext = createContext<TaskContextType | undefined>(undefined);
 export const TaskProvider = ({ children }: { children: React.ReactNode }) => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
-  
+
   useEffect(() => {
     const fetchTasks = async () => {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tasks`);
@@ -24,20 +24,45 @@ export const TaskProvider = ({ children }: { children: React.ReactNode }) => {
     fetchTasks();
   }, []);
 
-  const updateTaskStatus = (id: number, status: Task['status']) => {
-    setTasks(prev =>
-      prev.map(task => task.id === id ? { ...task, status } : task)
-    );
+  const updateTaskStatus = async (id: string, status: Task['status']) => {
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tasks/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status }),
+      });
+
+      if (!res.ok) throw new Error('Error al actualizar');
+
+      const updatedTask = await res.json();
+
+      setTasks(prev =>
+        prev.map(task => (task.id === id ? updatedTask : task))
+      );
+    } catch (error) {
+      console.error('Error actualizando tarea en backend:', error);
+    }
   };
 
-  const addTask = (task: Omit<Task, 'id'>) => {
-    const newTask: Task = {
-      ...task,
-      id: Date.now(), // ID temporal
-      status: 'pendiente',
-    };
-    setTasks(prev => [...prev, newTask]);
+
+
+  const addTask = async (task: Omit<Task, 'id'>) => {
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tasks`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...task, status: 'pendiente' }),
+      });
+
+      if (!res.ok) throw new Error('Error al crear tarea');
+
+      const newTask = await res.json();
+      setTasks(prev => [...prev, newTask]);
+    } catch (error) {
+      console.error('Error al crear tarea:', error);
+    }
   };
+
 
   return (
     <TaskContext.Provider value={{ tasks, setTasks, updateTaskStatus, addTask }}>
