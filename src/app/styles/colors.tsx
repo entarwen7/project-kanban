@@ -8,9 +8,6 @@ const colorsButton: Record<string, string> = {
 }
 
 
-
-
-
 const colorsCard: Record<string, string> = {
   futuro: 'bg-futuro text-white',
   proyeccion: 'bg-proyeccion text-white',

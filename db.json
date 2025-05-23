@@ -4,50 +4,36 @@
       "id": "1",
       "title": "Diseñar wireframes",
       "description": "Crear los wireframes para el nuevo módulo",
-      "status": "completada",
-      "assignedTo": "Laura"
+      "assignedTo": "mruiz@innerconsulting.com",
+      "status": "completada"
     },
     {
       "id": "2",
       "title": "Desarrollar API",
       "description": "Implementar endpoints en FastAPI",
-      "status": "completada",
-      "assignedTo": "Carlos"
+      "assignedTo": "liseth.arevaloe@gamil.com",
+      "status": "pendiente"
     },
     {
       "id": "3",
       "title": "Pruebas de QA",
       "description": "Ejecutar pruebas automatizadas",
-      "status": "completada",
-      "assignedTo": "Ana"
+      "assignedTo": "jospina@innerconsulting.com",
+      "status": "en_progreso"
     },
     {
       "id": "62ed",
-      "title": "Front",
-      "description": "competar todo",
-      "status": "completada",
-      "assignedTo": "Pablo"
+      "title": "Frontend-PQRS",
+      "description": "Diseño e implemntación de componentes",
+      "assignedTo": "fmorales@innerconsulting.com",
+      "status": "completada"
     },
     {
       "id": "3f75",
       "title": "Front alternativo",
-      "description": "Crear para la prueba ",
-      "status": "completada",
-      "assignedTo": "Camilo"
-    },
-    {
-      "id": "d4f1",
-      "title": "DDd",
-      "description": "ewbjkewd",
-      "status": "completada",
-      "assignedTo": "ewjlqedn"
-    },
-    {
-      "id": "21ef",
-      "title": "gtftuvf",
-      "description": "njfercbujrfbuj",
-      "status": "completada",
-      "assignedTo": "Diego"
+      "description": "Crear un diseño de baja fidelidad para la prueba.",
+      "assignedTo": "liseth.arevaloe@gamil.com",
+      "status": "completada"
     }
   ]
 }

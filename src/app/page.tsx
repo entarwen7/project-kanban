@@ -1,6 +1,5 @@
 
 import KanbanBoard from "./components/kanbanBoard";
-;
 import { TaskProvider } from '../app/context/tasksContext';
 
 
@@ -12,7 +11,6 @@ export default function Home() {
                 {/* Header */}
                 <header className="bg-black text-white px-4 sm:px-8 py-4 flex flex-col sm:flex-row items-center sm:justify-between gap-2 sm:gap-6">
                     <div className="flex items-center gap-4">
-
                         <h1 className="text-xl sm:text-2xl font-bold">Tablero Kanban</h1>
                     </div>
                 </header>

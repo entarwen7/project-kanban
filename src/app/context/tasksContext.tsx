@@ -7,6 +7,8 @@ interface TaskContextType {
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
   updateTaskStatus: (id: string, status: Task['status']) => void;
   addTask: (task: Omit<Task, 'id'>) => void;
+  editTask: (task: Task) => void;
+  deleteTask: (id: string) => void;
 }
 
 const TaskContext = createContext<TaskContextType | undefined>(undefined);
@@ -44,8 +46,6 @@ export const TaskProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
-
-
   const addTask = async (task: Omit<Task, 'id'>) => {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tasks`, {
@@ -63,9 +63,47 @@ export const TaskProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
+  const editTask = async (updatedTask: Task) => {
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tasks/${updatedTask.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedTask),
+      });
+
+      if (!res.ok) throw new Error('Error al editar tarea');
+
+      const updatedFromBackend = await res.json();
+
+      setTasks(prev =>
+        prev.map(task =>
+          task.id === updatedFromBackend.id ? updatedFromBackend : task
+        )
+      );
+
+    } catch (error) {
+      console.error('Error al editar la tarea:', error);
+    }
+  };
+
+  const deleteTask = async (id: string) => {
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tasks/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (!res.ok) throw new Error('Error al borrar tarea');
+
+      setTasks(prev => prev.filter(task => task.id !== id));
+    } catch (error) {
+      console.error('Error al borrar la tarea:', error);
+    }
+  };
+
+
 
   return (
-    <TaskContext.Provider value={{ tasks, setTasks, updateTaskStatus, addTask }}>
+    <TaskContext.Provider value={{ tasks, setTasks, updateTaskStatus, addTask, editTask, deleteTask }}>
       {children}
     </TaskContext.Provider>
   );
