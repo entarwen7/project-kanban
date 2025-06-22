@@ -4,35 +4,35 @@
       "id": "1",
       "title": "Diseñar wireframes",
       "description": "Crear los wireframes para el nuevo módulo",
-      "assignedTo": "mruiz@innerconsulting.com",
-      "status": "completada"
+      "assignedTo": "user1@aa.com",
+      "status": "en_progreso"
     },
     {
       "id": "2",
       "title": "Desarrollar API",
       "description": "Implementar endpoints en FastAPI",
-      "assignedTo": "liseth.arevaloe@gamil.com",
-      "status": "pendiente"
+      "assignedTo": "user4@aa.com",
+      "status": "completada"
     },
     {
       "id": "3",
       "title": "Pruebas de QA",
       "description": "Ejecutar pruebas automatizadas",
-      "assignedTo": "jospina@innerconsulting.com",
-      "status": "en_progreso"
+      "assignedTo": "user3@aa.com",
+      "status": "pendiente"
     },
     {
       "id": "62ed",
       "title": "Frontend-PQRS",
       "description": "Diseño e implemntación de componentes",
-      "assignedTo": "fmorales@innerconsulting.com",
-      "status": "completada"
+      "assignedTo": "user2@aa.com",
+      "status": "en_progreso"
     },
     {
       "id": "3f75",
       "title": "Front alternativo",
       "description": "Crear un diseño de baja fidelidad para la prueba.",
-      "assignedTo": "liseth.arevaloe@gamil.com",
+      "assignedTo": "user4@aa.com",
       "status": "completada"
     }
   ]

@@ -58,10 +58,10 @@ export const CreateTaskModal = ({ isOpen, onClose, onCreate, onEdit,
   if (!isOpen) return null;
 
   const participants = [
-    { name: 'Fabio Morales', email: 'fmorales@innerconsulting.com' },
-    { name: 'Mariana Ruiz', email: 'mruiz@innerconsulting.com' },
-    { name: 'Julian Ospina', email: 'jospina@innerconsulting.com' },
-    { name: 'Liseth Arévalo', email: 'liseth.arevaloe@gamil.com' },
+    { name: 'user1', email: 'user1@aa.com' },
+    { name: 'user2', email: 'user2@aa.com' },
+    { name: 'user3', email: 'user3@aa.com' },
+    { name: 'User4', email: 'user4@aa.com' },
   ];
 
 
